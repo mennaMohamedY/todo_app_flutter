@@ -6,11 +6,15 @@
     "enterTask":"ادخل مهمتك",
     "selectTime":"اختار الوقت",
     "addTaskBtn":"اضافه المهمه",
-      "language":"اللغه",
-      "mode":"الوضع",
-      "english":"الانجليزيه",
-      "arabic":"العربيه",
-      "dark":"مظلم",
-      "light":"مضء"
+    "language":"اللغه",
+    "mode":"الوضع",
+    "english":"الانجليزيه",
+    "arabic":"العربيه",
+    "dark":"مظلم",
+    "light":"مضء",
+    "editTask":"تعدبل مهمه",
+    "saveChanges":"احفظ التعديلات"
+
+
 
 }

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/edittodo.dart';
 import 'package:todo_app/homescreen.dart';
 import 'package:todo_app/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName:(context)=>HomeScreen(),
         ToDosScreen.routeName:(context)=>ToDosScreen(),
         SettingsScreen.routeName:(context)=>SettingsScreen(),
+        EditTodoScreen.routeName:(context)=>EditTodoScreen()
       },
 
     );

@@ -41,7 +41,8 @@ class _ToDosScreenState extends State<ToDosScreen> {
           ),
           dayProps:  EasyDayProps(
 
-             inactiveDayStyle: DayStyle(dayNumStyle: TextStyle(color: (provider.appMode==ThemeMode.dark)? MyTheme.colorPurble:Colors.black,fontSize: 18)),
+             inactiveDayStyle: DayStyle(decoration: BoxDecoration(color: (provider.appMode==ThemeMode.dark)? MyTheme.colorOnPrimaryDark:Colors.white),dayNumStyle: TextStyle(color: (provider.appMode==ThemeMode.dark)? MyTheme.colorPurble:Colors.black,fontSize: 18),
+             dayStrStyle: TextStyle(color: (provider.appMode==ThemeMode.dark)? Colors.white:Colors.black45,fontSize: 14),),
             dayStructure: DayStructure.dayStrDayNum,
             activeDayStyle: DayStyle(
               dayNumStyle: TextStyle(color: Colors.white),

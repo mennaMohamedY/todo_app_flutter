@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/edittodo.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
 
 import 'mytheme.dart';
@@ -48,6 +49,24 @@ class _ToDoItemState extends State<ToDoItem> {
                 foregroundColor: Colors.white,
                 icon: Icons.delete,
                 label: 'Delete',
+              ),
+
+            ],
+
+          ),
+          endActionPane:  ActionPane(
+            motion: ScrollMotion(),
+            children: [
+              SlidableAction(
+                // An action can be bigger than the others.
+                flex: 2,
+                onPressed: (context){
+                  Navigator.pushNamed(context, EditTodoScreen.routeName);
+                },
+                backgroundColor: (provider.appMode==ThemeMode.dark)? MyTheme.colorPurble:MyTheme.colorPrimary,
+                foregroundColor: Colors.white,
+                icon: Icons.edit_note,
+                label: 'Edit',
               ),
 
             ],
