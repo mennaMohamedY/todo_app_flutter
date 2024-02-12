@@ -1,0 +1,16 @@
+{
+  "appBarTitle": "قائمه المهام",
+    "list": "القائمه",
+    "settings": "الاعدادات",
+    "addTask":"اضافه مهمه",
+    "enterTask":"ادخل مهمتك",
+    "selectTime":"اختار الوقت",
+    "addTaskBtn":"اضافه المهمه",
+      "language":"اللغه",
+      "mode":"الوضع",
+      "english":"الانجليزيه",
+      "arabic":"العربيه",
+      "dark":"مظلم",
+      "light":"مضء"
+
+}
