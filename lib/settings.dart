@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/languagebottomsheet.dart';
 import 'package:todo_app/modebottomsheet.dart';
-import 'package:todo_app/mytheme.dart';
+import 'package:todo_app/theming/mytheme.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
 
 class SettingsScreen extends StatefulWidget {

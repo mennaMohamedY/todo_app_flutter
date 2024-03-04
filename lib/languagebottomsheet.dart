@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app/mytheme.dart';
+import 'package:todo_app/theming/mytheme.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
@@ -27,7 +27,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           ),),
           SizedBox(height: 12,),
           InkWell(onTap:(){provider.ChangeLanguage('ar');}, child: Container(
-            child: (provider.appLanguage=='ar')? selectedLanguageStyle(localization!.arabic):unSelectedLanguageStyle(localization!.arabic),
+            child: (provider.appLanguage=='ar')? selectedLanguageStyle(localization.arabic):unSelectedLanguageStyle(localization!.arabic),
           ),)
 
         ],

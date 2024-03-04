@@ -19,7 +19,10 @@ class MyTheme{
         ),
     textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),
     bodyLarge: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 23),
-     bodySmall: TextStyle(color: Color(0xffCACACA),fontSize: 22,fontWeight: FontWeight.w600),)
+     bodySmall: TextStyle(color: Color(0xffCACACA),fontSize: 16,fontWeight: FontWeight.w600),
+
+
+    )
 
   );
 
@@ -32,7 +35,7 @@ class MyTheme{
       bottomNavigationBarTheme: BottomNavigationBarThemeData(selectedItemColor: MyTheme.colorPurble,unselectedItemColor: Colors.white),
       textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),
         bodyLarge: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 23),
-        bodySmall: TextStyle(color: Color(0xffCACACA),fontSize: 22,fontWeight: FontWeight.w600))
+        bodySmall: TextStyle(color: Color(0xffCACACA),fontSize: 16,fontWeight: FontWeight.w600))
 
   );
 }

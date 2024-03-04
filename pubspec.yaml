@@ -37,12 +37,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   easy_date_timeline: ^1.0.3
   provider: ^6.1.1
+  carousel_slider: ^4.2.1
 
 
   flutter_localizations:
     sdk: flutter
   intl: any
   flutter_slidable: ^3.0.1
+  firebase_core: ^2.24.2
+  cloud_firestore: ^4.14.0
+  shared_preferences: ^2.2.2
+  firebase_auth: ^4.16.0
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +65,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

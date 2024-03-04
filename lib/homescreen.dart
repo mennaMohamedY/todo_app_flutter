@@ -1,11 +1,15 @@
 
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
+import 'package:todo_app/providers/user_provider.dart';
+import 'package:todo_app/register/custom_alertdialog.dart';
+import 'package:todo_app/register/loginscreen.dart';
 import 'package:todo_app/tobottomsheet.dart';
-import 'package:todo_app/mytheme.dart';
+import 'package:todo_app/theming/mytheme.dart';
 import 'package:todo_app/settings.dart';
 import 'package:todo_app/todoslist.dart';
 
@@ -24,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var userProvider=Provider.of<UserProvider>(context);
     var localization=AppLocalizations.of(context);
     var title=AppLocalizations.of(context)!.appBarTitle;
     var provider=Provider.of<AppConfigProvider>(context);
@@ -34,7 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
    return Scaffold(
      extendBody: true,
      appBar: AppBar(toolbarHeight:MediaQuery.of(context).size.height*0.17,
-       title: Text(title,style: Theme.of(context).textTheme.bodyMedium,),
+       title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
+         Text(" ${userProvider.currentUser?.username}'s \n ${title} ",style: Theme.of(context).textTheme.bodyMedium,),
+         InkWell(onTap:SignOut,child: Icon(Icons.exit_to_app,size: 29,))
+       ],),
+       //actions: [Icon(Icons.exit_to_app,size: 29,),],
      ),
      bottomNavigationBar:BottomAppBar(
        shape: CircularNotchedRectangle(),
@@ -74,4 +83,16 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
+
+  void SignOut() async{
+    print("signOut");
+    var usersProvider=Provider.of<UserProvider>(context,listen: false);
+    var tasksPrvider=Provider.of<AppConfigProvider>(context,listen: false);
+    CustomAlertDialog.ShowLoading(context, "Signing out....");
+    tasksPrvider.tasksList=[];
+    await FirebaseAuth.instance.signOut();
+    usersProvider.currentUser = null;
+    Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+
+  }
 }
