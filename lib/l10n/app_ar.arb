@@ -3,14 +3,46 @@
     "list": "القائمه",
     "settings": "الاعدادات",
     "addTask":"اضافه مهمه",
-    "enterTask":"ادخل مهمتك",
+    "taskTitle":"ادخل عنوان المهمه",
+    "taskDescription":"ادخل تفاصيل المهمه",
     "selectTime":"اختار الوقت",
     "addTaskBtn":"اضافه المهمه",
-      "language":"اللغه",
-      "mode":"الوضع",
-      "english":"الانجليزيه",
-      "arabic":"العربيه",
-      "dark":"مظلم",
-      "light":"مضء"
+    "language":"اللغه",
+    "mode":"الوضع",
+    "english":"الانجليزيه",
+    "arabic":"العربيه",
+    "dark":"مظلم",
+    "light":"مضء",
+    "editTask":"تعديل مهمه",
+    "saveChanges":"احفظ التعديلات",
+      "titleStateError":"يجب ادخال عنوان المهمه!",
+      "descriptionStateError":"يجب ادخال تفاصيل المهمه!",
+      "taskStateError": "برجاء ادخال المهمه",
+    "taskAddedtofirestore":"!تم اضافه المهمه ",
+      "taskDeleted":"تم حذف المهمه!",
+        "taskEdited": "تم تعديل المهمه !",
+        "taskTimeEdited": "تم تغيير وقت المهمه  !!",
+     "login":"دخول",
+     "register":"تسجيل دخول",
+     "yourName":"الاسم ",
+     "yourNameError":"برجاء ادخال كلمه اسمك!",
+     "email":"البريد الالكتروني",
+     "invalidEmail":"بريد الكترون غير صحيح",
+     "password":"كلمه السر",
+     "passwordError":" برجاء ادخال كلمه السر!",
+     "confirmPassword":"برجاء اعاده ادخال كلمه السر!",
+     "confirmPasswordError":"كلمه مرور غير متطابقه!",
+     "getStarted": "أبدا الان",
+     "createAccount":"انشاء حساب!",
+     "taskOrganizer":"منظم المهام",
+     "appOverView":"منطم سريع , سهل الاستخدام \n سهل المشاركه",
+        "emailError":"يجب ادخال البريد الالكتروني!"
+
+
+
+
+
+
+
 
 }
