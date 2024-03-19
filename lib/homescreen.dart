@@ -46,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
        //actions: [Icon(Icons.exit_to_app,size: 29,),],
      ),
      bottomNavigationBar:BottomAppBar(
+       height: MediaQuery.of(context).size.height*0.103,
        shape: CircularNotchedRectangle(),
         notchMargin: 7,
        child: BottomNavigationBar(

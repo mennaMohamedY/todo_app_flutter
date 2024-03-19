@@ -163,7 +163,7 @@ class _LoginScreenState extends State<RegisterScreen> {
                                 color: (provider.appMode==ThemeMode.dark)?Colors.white:Colors.black,
                                 fontSize: 18,fontWeight: FontWeight.bold) ,),
                               style: ElevatedButton.styleFrom( // ElevatedButton styles
-                                primary: (provider.appMode==ThemeMode.dark)?Color(0xff2A333C):Colors.white,
+                                backgroundColor: (provider.appMode==ThemeMode.dark)?Color(0xff2A333C):Colors.white,
                                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10), // Some padding example
                                 shape: RoundedRectangleBorder( // Border
                                   borderRadius: BorderRadius.circular(18.0),

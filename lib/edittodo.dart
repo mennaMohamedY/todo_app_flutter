@@ -112,7 +112,7 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: (provider.appMode==ThemeMode.dark)? MyTheme.colorPurble:MyTheme.colorPrimary, // button text color
+            foregroundColor: (provider.appMode==ThemeMode.dark)? MyTheme.colorPurble:MyTheme.colorPrimary, // button text color
           ),
         ),
       ), child: child!);
