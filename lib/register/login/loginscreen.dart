@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/firebaseutils/firebase_utils.dart';
 import 'package:todo_app/model/user_dataclass.dart';
 import 'package:todo_app/providers/user_provider.dart';
+import 'package:todo_app/register/login/loin_viewmodel.dart';
+import 'package:todo_app/register/register_interface.dart';
 import 'package:todo_app/theming/mytheme.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
 import 'package:todo_app/register/custom_alertdialog.dart';
@@ -14,7 +16,7 @@ import 'package:todo_app/register/registerscreen.dart';
 import 'package:todo_app/register/textformfield.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../homescreen.dart';
+import '../../homescreen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName="LoginScreen";
@@ -23,11 +25,18 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> implements RegisterNavigator{
   var formKey=GlobalKey<FormState>();
   TextEditingController emailController=TextEditingController(text: "menna@menna.com");
   TextEditingController passwordController=TextEditingController(text: "123456");
   bool hidePass=true;
+
+  LoginViewModel loginViewModel=LoginViewModel();
+  @override
+  void initState() {
+    // TODO: implement initState
+    loginViewModel.loginNavigator=this;
+  }
 
 
   @override
@@ -149,61 +158,39 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void Login()async{
-    var userProvider=Provider.of<UserProvider>(context,listen: false);
-
     if(formKey.currentState!.validate() == true){
-      //add acc to firebase
-      CustomAlertDialog.ShowLoading(context,"Loading...");
-      try {
-        final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-            email: emailController.text,
-            password: passwordController.text
-        );
-        print("displayedName ${credential.user?.displayName}");
-        var currentUSer= await FirebaseFireStoreUtils.getUserFromFireStore(credential.user!.uid);
-        if(currentUSer == null){
-          return;
-        }
-        userProvider.updateUser(currentUSer!);
-
-        //userProvider.ChangeUser(currentUser);
-        ///hide load
-        CustomAlertDialog.HideDialog(context);
-
-        ///show success dialog
-        CustomAlertDialog.ShowCustomeDialog(context: context,
-            content:"Successful sign in!",postitveActionTxt: "OK",
-            positiveButtonAction: (){
-              Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-            });
-
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'user-not-found') {
-          print('No user found for that email.');
-          ///hide load
-          CustomAlertDialog.HideDialog(context);
-
-          ///show failure dialog
-          CustomAlertDialog.ShowCustomeDialog(context: context,
-              content:"No user found for that email.!");
-        } else if (e.code == 'wrong-password') {
-          print('Wrong password provided for that user.');
-          ///hide load
-          CustomAlertDialog.HideDialog(context);
-
-          ///show failure dialog
-          CustomAlertDialog.ShowCustomeDialog(context: context,
-              content:"Wrong password provided for that user.");
-
-        }else{
-          print("error ${e}");
-          CustomAlertDialog.HideDialog(context);
-
-          ///show failure dialog
-          CustomAlertDialog.ShowCustomeDialog(context: context,
-              content:"invalid-credential, The supplied auth credential is incorrect");
-        }
-      }
+      loginViewModel.Login(emailController.text, passwordController.text);
     }
   }
+
+  @override
+  void addUserToGlobalProvider(Users user) {
+    var userProvider=Provider.of<UserProvider>(context,listen: false);
+    userProvider.updateUser(user);
+  }
+
+  @override
+  void hideLoading() {
+    CustomAlertDialog.HideDialog(context);
+  }
+
+  @override
+  void showPositiveDialog(String msg) {
+    CustomAlertDialog.ShowCustomeDialog(context: context, content:msg,postitveActionTxt: "OK",positiveButtonAction:
+    (){
+      Navigator.pushNamed(context, HomeScreen.routeName);
+    });
+  }
+
+  @override
+  void showLoading() {
+    CustomAlertDialog.ShowLoading(context, "Loading....");
+  }
+
+  @override
+  void showNegativeDialog(String msg) {
+    CustomAlertDialog.ShowCustomeDialog(context: context, content:msg,negativeActionTxt: "OK",);
+    //CustomAlertDialog.HideDialog(context);
+  }
+
 }

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
 import 'package:todo_app/providers/user_provider.dart';
 import 'package:todo_app/register/custom_alertdialog.dart';
-import 'package:todo_app/register/loginscreen.dart';
+import 'package:todo_app/register/login/loginscreen.dart';
 import 'package:todo_app/tobottomsheet.dart';
 import 'package:todo_app/theming/mytheme.dart';
 import 'package:todo_app/settings.dart';

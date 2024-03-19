@@ -8,7 +8,7 @@ import 'package:todo_app/providers/user_provider.dart';
 import 'package:todo_app/theming/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_app/providers/app_config_provider.dart';
-import 'package:todo_app/register/loginscreen.dart';
+import 'package:todo_app/register/login/loginscreen.dart';
 import 'package:todo_app/register/registerscreen.dart';
 import 'package:todo_app/settings.dart';
 import 'package:todo_app/todoslist.dart';
