@@ -3,8 +3,15 @@
 A new Flutter project.
 
 ## Getting Started
+your ultimate productivity companion designed to streamline task management with seamless online and offline capabilities, customizable theming, localization support, and secure authentication using Firebase Authentication
 
-This project is a starting point for a Flutter application.
+
+https://github.com/mennaMohamedY/todo_app_flutter/assets/62669827/a8b4f611-83e1-4068-ab18-af4894038388
+
+
+https://github.com/mennaMohamedY/todo_app_flutter/assets/62669827/5d9abc01-1e8d-4bc9-9150-ca39fbe3a8bd
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
